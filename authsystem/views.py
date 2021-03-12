@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm,PasswordChangeForm
 
 # login of user
 def login_user(request):
@@ -24,3 +24,15 @@ def register_user(request):
 
     context = {'html_register_form': register_form}
     return render(request,'register.html', context)
+
+# Forget pasword of user
+def forget_password_user(request):
+    
+    if request.method == 'GET':
+        passwordchange_form = PasswordChangeForm(request.user)
+
+    elif request.method == 'POST':
+        print('forget password')
+
+    context = {'html_resetpassword_form': passwordchange_form}
+    return render(request,'password.html', context)

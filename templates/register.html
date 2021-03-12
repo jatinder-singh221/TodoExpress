@@ -1,7 +1,8 @@
 {% extends 'authbase.html' %}
 {% block title %} TodoExpress Register {% endblock %} 
+{% block what %}Register{% endblock %}
 {% block content %}
     <form action="">
-        {{html_register_form.as_p}}
+        {{html_register_form}}
     </form>
 {% endblock%}
