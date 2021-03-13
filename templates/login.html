@@ -1,7 +1,12 @@
 {% extends 'authbase.html' %}
 {% block title %} TodoExpress Login {% endblock %} 
 {% block what %}Login{% endblock %}
+
 {% block content %}
+
+{% for message in messages %}
+    <p style="color: rgb(0, 255, 115);">{{message}}</p>
+{% endfor%}
     <form action="{% url 'auth:Login' %}" method="POST">
         {% csrf_token %}
         {% for items in html_login_form %}
@@ -9,7 +14,7 @@
             {{items}}
             {{items.error}}
         {% endfor%}
-        <button type="submit">Login</button>
+        <button type="submit" id="button"  >Login</button>
     </form>
 {% endblock%}
 {% block anchor %}<a href="">Forget Password?</a>{% endblock %}

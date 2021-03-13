@@ -2,7 +2,16 @@
 {% block title %} TodoExpress Register {% endblock %} 
 {% block what %}Register{% endblock %}
 {% block content %}
-    <form action="">
-        {{html_register_form}}
+    {% for message in messages %}
+       <p style="color: rgb(0, 255, 115);">{{message}}</p>
+    {% endfor %}
+    <form action="{% url 'auth:Register' %}" method="POST">
+        {% csrf_token %}
+        {% for items in html_register_form %}
+            {{items.label_tag}}
+            {{items}}
+            <span style="color: white; font-weight: bolder;">{{items.errors}}</span>
+        {% endfor %}
+        <button type="submit">Register</button>
     </form>
 {% endblock%}

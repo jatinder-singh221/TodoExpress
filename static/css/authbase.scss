@@ -96,22 +96,22 @@ body, html{
                     input[type='text'], input[type='password']{
                         width: 60%;
                         height: 3em;
-                        background-color:gray;
+                        background-color:rgba(255, 255, 255, 0.932);
                         margin-top: 0.5em;
                         text-align: center;
-                        color:white;
+                        color:black;
                         font-weight: bolder;
                         border: none;
                         border-radius: 0.9em;
                     }
                     button{
                         width: 40%;
-                        color:white;
+                        background-color: black;
                         height: 3em;
                         margin-top: 0.6em;
                         border: none;
                         border-radius: 1em;
-                        color: black;
+                        color: white;
                     }
                 }
                 a{

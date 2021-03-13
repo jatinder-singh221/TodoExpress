@@ -18,7 +18,7 @@
                     <a href="{% url 'auth:Register'%}" title="Register"><i  class="material-icons-outlined">create</i><span>Register</span></a>
                     <a href="{% url 'auth:Password'%}" title="Forget"><i class="material-icons-outlined">password</i><span>Forget?</span></a>
             </div>
-            <div id="form-auth">
+            <div id="form-auth" onselect="">
                 <p>{% block what %}{% endblock %}</p>
                 {% block content %}{% endblock %}
                 {% block anchor %}{% endblock %}

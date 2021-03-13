@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login
+from django.db.models.query import RawQuerySet
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm,PasswordChangeForm
@@ -8,13 +9,12 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm,Passw
 def login_user(request):
 
     if request.method == 'POST':
-        post_returned_form = AuthenticationForm(request = request, data = request.POST)
-
+        login_form = AuthenticationForm(request= request, data= request.POST)
         # checking form 
 
-        if post_returned_form.is_valid():
-            get_username = post_returned_form.cleaned_data.get('username')
-            get_password = post_returned_form.cleaned_data.get('password')
+        if login_form.is_valid():
+            get_username = login_form.cleaned_data.get('username')
+            get_password = login_form.cleaned_data.get('password')
             let_auth = authenticate(username = get_username, password = get_password)
 
             # if user is valid then login
@@ -25,11 +25,6 @@ def login_user(request):
             # if fail
             else :
                 messages.error(request, 'Check Username Or Password')
-                
-        # if not valid
-        else:
-            messages.error(request, 'Check Username Or Password')
-
     login_form = AuthenticationForm()
     context = {'html_login_form': login_form}
     return render(request, 'login.html',context)
@@ -37,12 +32,18 @@ def login_user(request):
 
 # Register of User
 def register_user(request):
+    register_form_instance = UserCreationForm
+    register_form = register_form_instance(request.POST or None)
 
-    if request.method == 'GET':
-        register_form = UserCreationForm()
+    # if request is post
+    if request.method == 'POST':
 
-    elif request.method == 'POST':
-        print('Register')
+        if register_form.is_valid():
+            register_form.save()
+            messages.info(request, 'Account created sucessfull')
+            return redirect('auth:Login')
+        else:
+            messages.error(request, 'Enter valid ')
 
     context = {'html_register_form': register_form}
     return render(request,'register.html', context)
