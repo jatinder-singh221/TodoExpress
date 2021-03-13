@@ -7,11 +7,11 @@ body, html {
 body #main-box, html #main-box {
   width: 100%;
   border: none;
-  background-image: url("../mattty-chan-mnPYsp7eJ44-unsplash.jpg");
+  background-image: url("../massimo-negrello-7yILs9zkQAk-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
-  position: fixed;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,7 +25,7 @@ body #main-box, html #main-box {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 0.3;
+  z-index: -5;
 }
 
 body #main-box #name, html #main-box #name {
@@ -38,8 +38,8 @@ body #main-box #auth-box, html #main-box #auth-box {
   width: 80%;
   height: auto;
   border: none;
-  background-color: #121212;
-  opacity: 0.89;
+  background-color: none;
+  opacity: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,10 +59,6 @@ body #main-box #tags, html #main-box #tags {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: none;
-}
-
-body #main-box #tags a:nth-child(1), html #main-box #tags a:nth-child(1) {
-  background-color: black;
 }
 
 body #main-box #tags a:nth-child(1) i, html #main-box #tags a:nth-child(1) i {
@@ -90,6 +86,7 @@ body #main-box #tags a, html #main-box #tags a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #121212;
 }
 
 body #main-box #tags a i, html #main-box #tags a i {
@@ -100,16 +97,16 @@ body #main-box #tags a i, html #main-box #tags a i {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: white;
+  color: rgba(255, 255, 255, 0.877);
   font-size: 40px;
 }
 
 body #main-box #tags a span, html #main-box #tags a span {
-  color: white;
+  color: rgba(255, 255, 255, 0.863);
 }
 
-body #main-box #tags a:hover, html #main-box #tags a:hover {
-  background-color: black;
+body #main-box #tags a:hover i, body #main-box #tags a:hover span, html #main-box #tags a:hover i, html #main-box #tags a:hover span {
+  color: white;
 }
 
 body #main-box #form-auth, html #main-box #form-auth {
@@ -140,13 +137,19 @@ body #main-box #form-auth form, html #main-box #form-auth form {
           justify-content: center;
 }
 
+body #main-box #form-auth form label, html #main-box #form-auth form label {
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+}
+
 body #main-box #form-auth form input[type='text'], body #main-box #form-auth form input[type='password'], html #main-box #form-auth form input[type='text'], html #main-box #form-auth form input[type='password'] {
   width: 60%;
   height: 3em;
-  background-color: grey;
+  background-color: gray;
   margin-top: 0.5em;
   text-align: center;
-  color: black;
+  color: white;
   font-weight: bolder;
   border: none;
   border-radius: 0.9em;

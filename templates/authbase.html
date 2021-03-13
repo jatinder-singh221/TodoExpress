@@ -8,20 +8,15 @@
     <title>{% block title %}{% endblock%}</title>
     <link rel="stylesheet" href="{% static '../static/css/authbase.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-    <style>
-        label{
-            color: white;
-        }
-    </style>
 </head>
 <body>
     <div id="main-box">
         <p id="name">TodoExpress</p>
         <div id="auth-box">
             <div id="tags">
-                    <a href="{% url 'auth:Login'%}"><i class="material-icons-outlined">login</i><span>Login</span></a>
-                    <a href="{% url 'auth:Register'%}"><i  class="material-icons-outlined">create</i><span>Register</span></a>
-                    <a href="{% url 'auth:Password'%}"><i class="material-icons-outlined">password</i><span>Forget?</span></a>
+                    <a href="{% url 'auth:Login'%}" title="Login"><i class="material-icons-outlined">login</i><span>Login</span></a>
+                    <a href="{% url 'auth:Register'%}" title="Register"><i  class="material-icons-outlined">create</i><span>Register</span></a>
+                    <a href="{% url 'auth:Password'%}" title="Forget"><i class="material-icons-outlined">password</i><span>Forget?</span></a>
             </div>
             <div id="form-auth">
                 <p>{% block what %}{% endblock %}</p>

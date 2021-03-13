@@ -6,16 +6,16 @@ body, html{
     #main-box{
         width: 100%;
         border: none; 
-        background-image:url('../mattty-chan-mnPYsp7eJ44-unsplash.jpg');
+        background-image:url('../massimo-negrello-7yILs9zkQAk-unsplash.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         height: 100%;
-        position: fixed;
+        position: absolute;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        z-index: 0.3;
+        z-index: -5;
 
         #name{
             font-size: xx-large;
@@ -27,8 +27,8 @@ body, html{
             width:80%;
             height: auto;
             border: none;
-            background-color: #121212;
-            opacity: 0.89;
+            background-color: none;
+            opacity: 1;
             display: flex;
             flex-direction: row;
             border: none;    
@@ -39,7 +39,6 @@ body, html{
                 flex-direction: column;
                 background-color: none;
                 a:nth-child(1){
-                    background-color: black;
                     i{
                         color: #00BFFF;
                     }
@@ -55,17 +54,21 @@ body, html{
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+                    background-color: #121212;
                     i{
                         display: flex;
                         flex-direction: column;
-                        color:white;
+                        color:rgba(255, 255, 255, 0.877);
                         font-size: 40px;
+
                     }
                     span{
-                        color: white;
+                        color: rgba(255, 255, 255, 0.863);
                     }
                     &:hover{
-                        background-color:black
+                        i,span{
+                            color: white;
+                        }
                     }
                 }
             }
@@ -84,13 +87,19 @@ body, html{
                     flex-wrap: wrap;
                     justify-content: center;
 
+                    label{
+                        color: white;
+                        font-size: large;
+                        font-weight: bolder;
+                    }
+
                     input[type='text'], input[type='password']{
                         width: 60%;
                         height: 3em;
-                        background-color: grey;
+                        background-color:gray;
                         margin-top: 0.5em;
                         text-align: center;
-                        color:black;
+                        color:white;
                         font-weight: bolder;
                         border: none;
                         border-radius: 0.9em;
