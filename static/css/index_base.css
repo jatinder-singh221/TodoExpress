@@ -1,0 +1,92 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  border: solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #121212;
+  position: fixed;
+  width: 100%;
+}
+
+header p {
+  font-size: large;
+  font-weight: 600;
+  color: white;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border: none;
+  width: 40%;
+}
+
+header nav a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.884);
+}
+
+header nav a:hover {
+  color: white;
+}
+
+@media only screen and (max-width: 540px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  header nav a {
+    margin-left: 1em;
+  }
+}
+
+footer {
+  padding-top: 100px;
+  background-color: #121212;
+  height: 50px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  margin-left: 1em;
+  color: white;
+}
+/*# sourceMappingURL=index_base.css.map */
