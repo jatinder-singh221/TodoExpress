@@ -5,7 +5,9 @@ from django.contrib.auth.decorators import login_required
 # indexview
 @login_required(login_url = 'auth:Login' )
 def index_view(request):
-    return render(request, 'test.html')
+    return render(request, 'index_base.html')
+
+
 
 @login_required(login_url = 'auth:Login' )
 def test_view(request):

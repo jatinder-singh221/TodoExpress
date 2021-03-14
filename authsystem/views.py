@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.db.models.query import RawQuerySet
 from django.shortcuts import redirect, render
 from django.contrib import messages
@@ -72,3 +72,16 @@ def forget_password_user(request):
         return redirect('home:Home')
         
     return render(request,'password.html')
+
+
+# logout
+def user_logout(request):
+
+    # if login
+    if request.user.is_authenticated:
+        logout(request)
+        return redirect('auth:Login')
+
+    # else if not login
+    else:
+        return redirect('home:Home')

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todoexpress</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/index_base.css">
+    <link rel="stylesheet" href="{% static '../static/css/index_base.css' %}">
 </head>
 <body>
     <header>
@@ -14,10 +15,37 @@
         <nav>
             <a href="" title="History"> <i class="material-icons-outlined">history</i> History</a>
             <a href="" title="Add"><i class = 'material-icons-outlined'>add</i> Add</a>
-            <a href="" title="Logout"><i class="material-icons-outlined">logout</i>Logout</a>
+            <a href="{% url 'auth:Logout' %}" title="Logout"><i class="material-icons-outlined">logout</i>Logout</a>
             <a href="" title="Account"><i class="material-icons-outlined">person</i> Account</a>
         </nav>
     </header>
+
+    <main>
+        <p>Today List</p>
+
+        <div id="master-content">
+            <div class="content">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Edit</th>
+                        <th>Complete</th>
+                        <th>view</th>
+                    </tr>
+                    <tr>
+                        <td>Python programing lanugage</td>
+                        <td>23/03/2021</td>
+                        <td>12:00Pm</td>
+                        <td><a href="" class="material-icons-outlined" title="Edit">edit</a></td>
+                        <td><a href="" class="material-icons-outlined" title="completed">done</a></td>
+                        <td><a href="" title="view"><button>view</button></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <a href="">About</a>
