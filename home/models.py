@@ -4,7 +4,7 @@ from django.dispatch import receiver
 from django.db.models.signals import post_save
 
 class extendexd_user_model(models.Model):
-    linked_user = models.OneToOneField(User, on_delete = models.CASCADE, verbose_name = 'User', db_column = 'linked_user')
+    linked_user = models.OneToOneField(User, on_delete = models.CASCADE, verbose_name = 'User', db_column = 'linked_user', related_name='linked_profile')
     user_profile = models.ImageField(upload_to= 'userprofiles', db_column = 'user_profile', verbose_name = 'Select Profile Picture')
 
     # manage name   

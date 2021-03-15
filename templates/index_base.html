@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <p>TodoExpress</p>
+        <a href="{% url 'home:Home' %}" style="text-decoration: none;"><p>TodoExpress</p></a>
         <nav>
             <a href="" title="History"> <i class="material-icons-outlined">history</i> History</a>
             <a href="" title="Add"><i class = 'material-icons-outlined'>add</i> Add</a>
@@ -21,11 +21,11 @@
     </header>
 
     <main>
-        <p>Today List</p>
+        <p>{%  block what%} Todo List{% endblock %}</p>
 
         <div id="master-content">
             <div class="content">
-                <table>
+                <!-- <table>
                     <tr>
                         <th>Name</th>
                         <th>Date</th>
@@ -42,8 +42,9 @@
                         <td><a href="" class="material-icons-outlined" title="completed">done</a></td>
                         <td><a href="" title="view"><button>view</button></a></td>
                     </tr>
-                </table>
-            </div>
+                </table> -->
+            {% block content %}
+            {% endblock%}
         </div>
     </main>
 

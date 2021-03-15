@@ -85,7 +85,7 @@ footer {
   text-align: center;
   margin-top: 2em;
   width: 100%;
-  position: absolute;
+  position: relative;
   bottom: 0;
   opacity: 0.8;
 }
@@ -99,6 +99,7 @@ footer a {
 main {
   border: none;
   padding-top: 100px;
+  height: 100%;
 }
 
 main p {
