@@ -31,9 +31,9 @@ def login_user(request):
                         
                     return redirect('home:Home')
                 
-                # if fail
-                else :
-                    messages.error(request, 'Check Username Or Password')
+            # if fail
+            else:   
+                messages.error(request, 'Check Username Or Password')
         login_form = AuthenticationForm()
         context = {'html_login_form': login_form}
         return render(request, 'login.html',context)
