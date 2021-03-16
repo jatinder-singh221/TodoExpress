@@ -1,0 +1,11 @@
+{% extends 'index_base.html' %}
+{%  block what%} update details{% endblock %}
+{% block content %}
+    <form action="{% url 'home:Updatedata' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for items in html_detail_form %}
+            {{items}}{{items.errors}}
+        {% endfor %}
+        <button type="submit">Change</button>
+    </form>
+{% endblock%}

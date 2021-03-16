@@ -29,5 +29,7 @@ def upate_profile(sender, instance, created, **kwarg):
     
     #if not created
     if created == False:
-        instance.extendexd_user_model.save()
+        pass
+        # instance.extendexd_user_model.save()
+
 
