@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static '../static/css/account.css' %}">
     <div id="profile">
         <div id="photo">
-            <img src="{{picture.user_profile.url}}" alt="">
+            <img src="{{picture.user_profile.url}}" alt="NONE">
         </div>
         <a href="{% url 'home:Updatedata' %}"  title="Change Details" style="font-size: medium;">Change details</a>
         <a href="{% url 'home:Updateprofile' %}"  title="Change profile picture" style="font-size: medium;">Change profile picture</a>
