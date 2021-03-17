@@ -1,0 +1,9 @@
+{% extends 'index_base.html' %}
+{%  block what%} change details{% endblock %}
+{% block content %}
+<form action="{% url 'home:Change' of_what.id %}" method="POST">
+    {% csrf_token %}
+    {{html_todo_change}}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

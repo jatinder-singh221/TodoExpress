@@ -48,6 +48,9 @@ class enter_todo_items(models.Model):
     class Meta:
         verbose_name_plural = 'Todo_entries'
 
+    def get_absolute_url(self):
+        return f'/home/changedetails/{self.id}/'
+
     
 
 

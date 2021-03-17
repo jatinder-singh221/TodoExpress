@@ -99,3 +99,25 @@ def user_todo(request):
     
     context = {'html_todo_form': todo_form }
     return render(request,'todo.html',context)
+
+
+#change details of todo
+@login_required(login_url='auth:Login')
+def change_details(request, item_id):
+    profile_of = request.user.connected_user.get(id = item_id)
+
+    if request.method == 'POST':
+        todo_post = todo_entery_form(request.POST, instance=profile_of)
+        if todo_post.is_valid():
+            todo_post.save()
+            return redirect('home:Home')
+
+
+    data_get = enter_todo_items.todo.select_related('linked_profile').get(id = item_id)
+    todo_change = todo_entery_form(initial=
+    {'todo_name':data_get.todo_name, 
+    'datetime_to_happen':data_get.datetime_to_happen,
+    'descriptions':data_get.descriptions})
+    
+    context = {'html_todo_change':todo_change, 'of_what':data_get}
+    return render(request,'change_todo.html',context)
