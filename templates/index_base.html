@@ -14,7 +14,7 @@
         <a href="{% url 'home:Home' %}" style="text-decoration: none;"><p>TodoExpress</p></a>
         <nav>
             <a href="" title="History"> <i class="material-icons-outlined">history</i> History</a>
-            <a href="" title="Add"><i class = 'material-icons-outlined'>add</i> Add</a>
+            <a href="{% url 'home:Todo' %}" title="Add"><i class = 'material-icons-outlined'>add</i> Add</a>
             <a href="{% url 'auth:Logout' %}" title="Logout"><i class="material-icons-outlined">logout</i>Logout</a>
             <a href="{% url 'home:Account' %}" title="Account"><i class="material-icons-outlined">person</i> Account</a>
         </nav>

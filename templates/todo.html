@@ -1,0 +1,15 @@
+{% extends 'index_base.html' %}
+{%  block what%} Add task{% endblock %}
+{% block content %}  
+{% for message in messages %}
+    {{message}}
+{% endfor%}
+<form action="{% url 'home:Todo' %}" method="POST">
+    {% csrf_token %}
+    {% for items in html_todo_form %}
+        {{items.label_tag}}
+        {{items}}{{items.errors}}
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
+{% endblock%}

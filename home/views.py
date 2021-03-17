@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-from .forms import extend_user_form, user_detail_form 
+from .forms import extend_user_form, user_detail_form, todo_entery_form
 from django.contrib.auth.models import User
 
 
@@ -71,3 +71,27 @@ def details_update(request):
 
     context = {'html_detail_form': get_form}
     return render(request,'updatedetails.html', context)
+
+# enter todo items
+@login_required(login_url='auth:Login')
+def user_todo(request):
+
+    profile_of = request.user
+    todo_form_instance = todo_entery_form
+    todo_form = todo_form_instance(request.POST or None)
+
+    if request.method == 'POST':
+
+        if todo_form.is_valid():
+            intial_save = todo_form.save(commit=False)
+            intial_save.linked_profile = profile_of
+            intial_save.save()
+
+            messages.success(request, 'Task Added')
+            return redirect('home:Todo')
+
+        else:
+            messages.error(request, 'Enter valid data')
+    
+    context = {'html_todo_form': todo_form }
+    return render(request,'todo.html',context)
