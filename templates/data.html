@@ -1,0 +1,22 @@
+{% extends 'index_base.html' %}
+{%  block what%} Todo List{% endblock %}
+{% block content %}
+<table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date & Time</th>
+                        <th>Edit</th>
+                        <th>Complete</th>
+                        <th>view</th>
+                    </tr>
+                    {% for details in data%}
+                    <tr>
+                        <td>{{details.todo_name|title}}</td>
+                        <td>{{details.datetime_to_happen}}</td>
+                        <td><a href="" class="material-icons-outlined" title="Edit">edit</a></td>
+                        <td><a href="" class="material-icons-outlined" title="completed">done</a></td>
+                        <td><a href="" title="view"><button>view</button></a></td>
+                    </tr>
+                    {% endfor%}
+                </table>
+{% endblock %}

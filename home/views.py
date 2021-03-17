@@ -3,13 +3,17 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from .forms import extend_user_form, user_detail_form, todo_entery_form
 from django.contrib.auth.models import User
+from .models import enter_todo_items
 
 
 
 # indexview
 @login_required(login_url = 'auth:Login' )
 def index_view(request):
-    return render(request, 'index_base.html')
+    profile_of = request.user
+    get_query = profile_of.connected_user.all()
+    context = {'data':get_query}
+    return render(request, 'data.html', context)
 
 
 

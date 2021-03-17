@@ -36,7 +36,7 @@ def upate_profile(sender, instance, created, **kwargs):
 
 # to add todo items
 class enter_todo_items(models.Model):
-    linked_profile = models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = 'Select user',db_column = 'linked_user')
+    linked_profile = models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = 'Select user',db_column = 'linked_user', related_name = 'connected_user')
     todo_name = models.CharField('Name', max_length=100, db_column = 'Title', validators=[valid_data])
     datetime_to_happen = models.DateTimeField('Date', db_column='date_to_happen')
     descriptions = models.SlugField('Description', db_column='discription')
