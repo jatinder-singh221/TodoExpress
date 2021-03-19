@@ -15,7 +15,7 @@
                         <td>{{details.datetime_to_happen}}</td>
                         <td><a href="{{details.get_absolute_url}}" class="material-icons-outlined" title="Edit">edit</a></td>
                         <td><a href="" class="material-icons-outlined" title="completed">done</a></td>
-                        <td><a href="" title="view"><button>view</button></a></td>
+                        <td><a href="{% url 'home:View' details.id %}" title="view"><button>view</button></a></td>
                     </tr>
                     {% endfor%}
                 </table>

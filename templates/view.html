@@ -1,0 +1,16 @@
+{% extends 'index_base.html' %}
+{%  block what %}History{% endblock %}
+{% block content %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Date & Time</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>{{details.todo_name|title}}</td>
+        <td>{{details.datetime_to_happen}}</td>
+        <td>{{details.descriptions}}</td>
+    </tr>
+</table>
+{% endblock %}

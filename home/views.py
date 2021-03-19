@@ -124,9 +124,17 @@ def change_details(request, item_id):
 
 
 # history
-
 def history(request):
     profile_of = request.user
     get_query = profile_of.connected_user.all()
     context = {'data':get_query}
     return render(request, 'history.html', context)
+
+
+# view of todo items
+def view(request, item_id):
+    
+    data_get = enter_todo_items.todo.select_related('linked_profile').get(id = item_id)
+
+    context = {'details':data_get}
+    return render(request,'view.html',context)
