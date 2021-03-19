@@ -121,3 +121,12 @@ def change_details(request, item_id):
     
     context = {'html_todo_change':todo_change, 'of_what':data_get}
     return render(request,'change_todo.html',context)
+
+
+# history
+
+def history(request):
+    profile_of = request.user
+    get_query = profile_of.connected_user.all()
+    context = {'data':get_query}
+    return render(request, 'history.html', context)
