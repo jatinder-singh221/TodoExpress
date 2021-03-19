@@ -138,3 +138,12 @@ def view(request, item_id):
 
     context = {'details':data_get}
     return render(request,'view.html',context)
+
+
+# completed
+def completed(request, item_id):
+
+    data_get = enter_todo_items.todo.select_related('linked_profile').get(id = item_id)
+    data_get.isdone = True
+    data_get.save()
+    return redirect('home:Home')
