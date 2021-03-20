@@ -1,13 +1,13 @@
 from django.contrib.auth import authenticate, login, logout
-from django.db.models.query import RawQuerySet
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm,PasswordChangeForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 
 # login of user
 def login_user(request):
     #redirect if login
+    
     if request.user.is_authenticated:
         return redirect('home:Home')
 
