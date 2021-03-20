@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index_view,account_of_user,profile_change,details_update,user_todo,change_details,history,view,completed
+from .views import index_view,account_of_user,profile_change,details_update,user_todo,change_details,history,view,completed, about
 
 urlpatterns = [
     path('', index_view, name = 'Home'),
@@ -11,6 +11,7 @@ urlpatterns = [
     path('history/', history, name = 'History'),
     path('view/<int:item_id>/', view, name = 'View'),
     path('complete/<int:item_id>/', completed, name = 'Complete'),
+    path('about/', about, name = 'About')
 ]
 
 #app name

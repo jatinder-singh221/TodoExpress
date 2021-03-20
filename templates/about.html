@@ -1,0 +1,11 @@
+{% extends 'index_base.html' %}
+{% block what %}About{% endblock %}
+
+{% block content %}
+    <p>Name</p>
+    <p>{{html_data.name | title}}</p>
+    <p>Purpose</p>
+    <p>{{html_data.purpose | title}}</p>
+    <p>Tech used</p>
+    <p>{{html_data.tech_used | title}}</p>
+{% endblock %}

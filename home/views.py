@@ -147,3 +147,14 @@ def completed(request, item_id):
     data_get.isdone = True
     data_get.save()
     return redirect('home:Home')
+
+
+# about
+def about(request):
+    data = {
+        'name': 'jatinder singh',
+        'purpose': 'to make a todo app for myself',
+        'tech_used': 'Django , html, css, scss, python '
+    }
+    context = {'html_data': data}
+    return render(request, 'about.html', context)
